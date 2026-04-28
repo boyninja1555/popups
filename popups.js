@@ -1,7 +1,9 @@
 function newPopup(url, tagline, imageUrl) {
 	const iframe = document.createElement("iframe")
-	iframe.style.top = Math.random() * window.innerWidth
-	iframe.style.left = Math.random() * window.innerHeight
+	iframe.style.top = Math.random() * window.innerHeight + "px"
+	iframe.style.left = Math.random() * window.innerWidth + "px"
+	iframe.style.width = "800px"
+	iframe.style.height = "500px"
 	iframe.style.position = "fixed"
 	iframe.style.zIndex = "999999"
 	document.body.appendChild(iframe)
@@ -19,6 +21,11 @@ function newPopup(url, tagline, imageUrl) {
 	popup.appendChild(taglineEl)
 
 	const doc = iframe.contentDocument
+	if (!doc.body) {
+		const body = doc.createElement("body")
+		doc.appendChild("body")
+	}
+
 	doc.body.appendChild(popup)
 }
 
