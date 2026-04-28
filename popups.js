@@ -13,3 +13,5 @@ function newPopup(url, tagline, imageUrl) {
 
 	document.body.appendChild(popup)
 }
+
+newPopup("https://grantyap.flappygrant.com/app", "Grantyap: The inspiration for gravyap", "https://grantyap.flappygrant.com/vite.svg")
