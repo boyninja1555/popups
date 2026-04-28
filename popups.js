@@ -4,6 +4,7 @@ function newPopup(url, tagline, imageUrl) {
 	iframe.style.left = Math.random() * window.innerHeight
 	iframe.style.position = "fixed"
 	iframe.style.zIndex = "999999"
+	document.body.appendChild(iframe)
 
 	const popup = document.createElement("a")
 	popup.href = url
@@ -17,8 +18,8 @@ function newPopup(url, tagline, imageUrl) {
 	taglineEl.textContent = tagline
 	popup.appendChild(taglineEl)
 
-	iframe.appendChild(popup)
-	document.body.appendChild(iframe)
+	const doc = iframe.contentDocument
+	doc.body.appendChild(popup)
 }
 
 newPopup("https://grantyap.flappygrant.com/app", "Grantyap: The inspiration for gravyap", "https://grantyap.flappygrant.com/vite.svg")
