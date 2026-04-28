@@ -1,9 +1,10 @@
 function newPopup(url, tagline, imageUrl) {
 	const iframe = document.createElement("iframe")
+	iframe.style.background = "white"
 	iframe.style.top = Math.random() * window.innerHeight + "px"
 	iframe.style.left = Math.random() * window.innerWidth + "px"
-	iframe.style.width = "100px"
-	iframe.style.height = "60px"
+	iframe.style.width = "300px"
+	iframe.style.height = "100px"
 	iframe.style.position = "fixed"
 	iframe.style.zIndex = "999999"
 	document.body.appendChild(iframe)
